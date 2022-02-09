@@ -3,7 +3,6 @@ import ReactDOM from "react-dom";
 import SearchForm from "./SearchForm";
 import WeatherOverview from "./WeatherOverview";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./styles.css";
 
 function App() {
   return (
