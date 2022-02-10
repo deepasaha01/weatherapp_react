@@ -1,12 +1,13 @@
-import axios from "axios";
 import React, { useState } from "react";
+import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./SearchForm.css";
+import WeatherDescription from "./WeatherDescription";
 import WeatherOverview from "./WeatherOverview";
 
 export default function SearchForm() {
   let [city, setCity] = useState("");
   let [text, setText] = useState("");
-
   let [response, setResponse] = useState("");
 
   function handleChange(event) {
@@ -28,16 +29,30 @@ export default function SearchForm() {
 
   return (
     <div className="SearchForm">
-      <form onSubmit={handleSubmit}>
-        <input
-          type="search"
-          placeholder="Type a city"
-          onChange={handleChange}
-        />
-        <input type="submit" value="Search" />
+      <form action="" className="mb-3" onSubmit={handleSubmit}>
+        <div className="row">
+          <div className="col-8 px-0">
+            <input
+              type="search"
+              placeholder="Type a city.."
+              className="form-control"
+              onChange={handleChange}
+            />
+          </div>
+          <div className="col-4 pe-0">
+            <div className="btn-group" role="group">
+              <button type="submit" className="btn btn-primary">
+                Search
+              </button>
+              <button type="button" className="btn btn-success">
+                Current
+              </button>
+            </div>
+          </div>
+        </div>
       </form>
       <p className="mt-3">{text}</p>
-
+      <WeatherDescription apiResponse={response} />
       <WeatherOverview apiResponse={response} />
     </div>
   );

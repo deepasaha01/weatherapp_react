@@ -1,0 +1,8 @@
+body {
+  font-family: sans-serif;
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 30px;
+  border: 1px solid #dadde1;
+  border-radius: 5px;
+}
