@@ -4,13 +4,17 @@ import "./style.css";
 import SearchForm from "./SearchForm";
 import WeatherDescription from "./WeatherDescription";
 import WeatherOverview from "./WeatherOverview";
+import Footer from "./Footer";
 
 export default function App() {
   return (
     <div className="App">
-      <SearchForm />
-      <WeatherDescription />
-      <WeatherOverview />
+      <div className="container">
+        <SearchForm />
+        <WeatherDescription />
+        <WeatherOverview />
+      </div>
+      <Footer />
     </div>
   );
 }
